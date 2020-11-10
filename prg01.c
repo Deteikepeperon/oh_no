@@ -14,8 +14,6 @@ int main(void)
   a[2][0] = 5;  a[2][1] = 8;  a[2][2] = 24;  a[2][3] = 93;
 
   row_reduction(a);
-
-  for (int i = 0; i < N; i++)  printf("x[%d] = %f\n", i, a[i][N]);
 }
 
 
@@ -32,8 +30,11 @@ void row_reduction(double a[][N + 1])
     for (int k = 0; k < N; k++){
       if ((k - i) != 0) {
         t = a[k][i];
+
         for (int j = i; j < N + 1; j++)  a[k][j] = a[k][j] - t * a[i][j];
       }
     }
   }
+
+  for (int i = 0; i < N; i++)  printf("x[%d] = %f\n", i, a[i][N]);
 }
