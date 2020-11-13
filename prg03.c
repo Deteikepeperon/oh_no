@@ -7,24 +7,24 @@ double regula_falsi(double a, double b);
 
 int main(void)
 {
-  double alpha = regula_falsi(0.5, 2);
+  double alpha = regula_falsi(2.5, 3);    // 初期値
 
-  printf("%f\n", alpha);
+  printf("\n根 %f\n", alpha);
 }
 
 
-// 代数方程式を定義
+// 方程式を定義
 double func(double x)
 {
-  return x * x - 1;
+  return (1.25 * sin(0.4 * x) * sin(0.6 * x)) - x * sin(x);
 }
 
 
-// 挟み撃ち法
+// はさみうち法
 double regula_falsi(double a, double b)
 {
   double c;
-  double eps = 0.000001;
+  double eps = 0.000001;    // 許容誤差
 
   do {
     c = (a * func(b) - b * func(a)) / (func(b) - func(a));
@@ -37,4 +37,5 @@ double regula_falsi(double a, double b)
 
   return c;
 }
+
 
