@@ -9,7 +9,7 @@ void newton_method(double x0);
 // ニュートン法
 int main(void)
 {
-  newton_method(2.0);
+  newton_method(1.5);
 }
 
 
@@ -31,7 +31,7 @@ double dfunc(double x)
 void newton_method(double x0)   // 初期値
 {
   double dx, x1;
-  double eps = 0.000001;    // 許容誤差
+  double eps = 0.000001;        // 許容誤差
 
   do {
     double fx0 = func(x0);
@@ -43,5 +43,5 @@ void newton_method(double x0)   // 初期値
 
   } while (dx > eps);
 
-  printf("%f\n", x0);
+  printf("\n根 %f\n", x0);
 }
