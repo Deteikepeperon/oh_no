@@ -2,14 +2,12 @@
 #include <math.h>
 
 double func(double x);
-double regula_falsi(double a, double b);
+void regula_falsi(double a, double b);
 
 
 int main(void)
 {
-  double alpha = regula_falsi(2.5, 3);    // 初期値
-
-  printf("\n根 %f\n", alpha);
+  regula_falsi(2.5, 3);    // 初期値
 }
 
 
@@ -21,7 +19,7 @@ double func(double x)
 
 
 // はさみうち法
-double regula_falsi(double a, double b)
+void regula_falsi(double a, double b)
 {
   double c;
   double eps = 0.000001;    // 許容誤差
@@ -35,7 +33,7 @@ double regula_falsi(double a, double b)
 
   } while (fabs(func(c)) > eps);
 
-  return c;
+  printf("\n根 %f\n", c);
 }
 
 

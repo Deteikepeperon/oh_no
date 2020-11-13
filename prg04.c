@@ -6,7 +6,6 @@ double dfunc(double x);
 void newton_method(double x0);
 
 
-// ニュートン法
 int main(void)
 {
   newton_method(1.5);
